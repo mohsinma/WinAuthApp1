@@ -1,0 +1,132 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <form name="testForm" class="needs-validation form-horizontal" novalidate>
+      <div class="testContainer">
+        <div class="row">
+          <div class="col-md-12"> <h1>Test Page</h1><hr> </div>
+          {{testDate}}
+        </div>
+
+        <!--All controls go below-->
+        <div class="row jumbotron">
+
+          <div class="row">
+            <p>ngx-bootstrap (2.0.2)</p>
+            <div class="col-md-3">
+              <label class="required">Sample Date:</label>
+              <input type="text"
+                     class="form-control"
+                     [minDate]="minDate"
+                     [maxDate]="maxDate"
+                     #dp="bsDatepicker"
+                     [bsConfig]="bsConfig"
+                     bsDatepicker [(bsValue)]="bsValue">
+            </div>
+            <div class="col-md-3">
+              <label>Date Range:</label>
+              <input class="form-control" #drp="bsDaterangepicker" bsDaterangepicker [bsConfig]="bsConfig" [(ngModel)]="bsRangeValue" name="dateRange">
+            </div>
+            <div class="col-md-3">
+              <label>Manufacture:</label>
+              <select class="form-control">
+                <option [value]="1">One</option>
+                <option [value]="2">Two</option>
+                <option [value]="3">Three</option>
+                <option [value]="4">Four</option>
+                <option [value]="5">Five</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label>Sub Manufacture:</label>
+              <select class="form-control">
+                <option [value]="1">One</option>
+                <option [value]="2">Two</option>
+                <option [value]="3">Three</option>
+                <option [value]="4">Four</option>
+                <option [value]="5">Five</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <label class="required">Model:</label>
+
+              <button type="button" class="btn btn-primary" (click)="openModal(template)">Click 4 Model</button>
+              <ng-template #template>
+                <div class="modal-header">
+                  <h4 class="modal-title pull-left">Modal</h4>
+                  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Sample model popup using ngx-bootstrap.
+                </div>
+              </ng-template>
+            </div>
+            <div class="col-md-3">
+              <label class="required">Pop Over:</label>
+
+              <button type="button" class="btn btn-default btn-secondary"
+                      popover="The Quick Brown Fox Jumps Over The Lazy Dog."
+                      popoverTitle="Popover on top"
+                      placement="top">
+                Click 4 Popover
+              </button>
+            </div>
+
+            <div class="col-md-3">
+              <label class="required">ToolTip:</label>
+              <button type="button" class="btn btn-default btn-secondary"
+                      tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                      placement="auto">
+                Click 4 Tooltip
+              </button>
+            </div>
+
+            <div class="col-md-3">
+              <label class="required">Type Ahead:</label>
+              <input name="states"
+                     [(ngModel)]="selected"
+                     [typeahead]="states"
+                     placeholder="search states"
+                     class="form-control">
+              {{selected | json}}
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row"><br /> </div>
+
+        <div class="jumbotron">
+          <div class="row">
+            <p>ng2-toastr (4.1.2)</p>
+            <div class="col-md-3">
+              <label>Success Toastr:</label>
+              <button class="btn btn-success" (click)="showSuccess()">Success Toastr</button>
+            </div>
+            <div class="col-md-3">
+              <label>Warning Toastr:</label>
+              <button class="btn btn-warning" (click)="showWarning()">Warning Toastr</button>
+            </div>
+            <div class="col-md-3">
+              <label>Error Toastr:</label>
+              <button class="btn btn-danger" (click)="showError()">Error Toastr</button>
+            </div>
+            <div class="col-md-3">
+              <label>Custom Toastr:</label>
+              <button class="btn btn-default" (click)="showCustom()">Custom Toastr</button>
+            </div>
+
+            <button class="btn btn-success" (click)="logToDb()">Log to DB</button>
+
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>

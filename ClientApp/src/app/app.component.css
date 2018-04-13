@@ -1,0 +1,21 @@
+@media (max-width: 767px) {
+  /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+  .body-content {
+    padding-top: 50px;
+  }
+
+  hr.footerline {
+    border-top: 2px solid #d1d0d0;
+    border-bottom: 1px solid #fff;
+  }
+
+  .footer {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+  }
+
+}

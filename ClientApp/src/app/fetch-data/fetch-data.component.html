@@ -1,0 +1,28 @@
+<div class="main-content">
+  <div class="container-fluid">
+
+    <div class="card">
+
+        <h1>Weather forecast</h1>
+        <div class="listContainer">
+          <div class="row">
+            <div class="col-md-12">
+              <p>This component demonstrates fetching data from the server.</p>
+              <p *ngIf="!forecasts"><em>Loading...</em></p>
+              <ng2-smart-table [settings]="settings" [source]="forecasts"></ng2-smart-table>
+            </div>
+          </div>
+          <br />
+
+          <div class="row">
+            <div class="col-md-12">
+              <button class="btn btn-primary pull-right" routerLink=""><i class="fa fa-plus" aria-hidden="true"></i> Add </button>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+  </div>
+</div>
+

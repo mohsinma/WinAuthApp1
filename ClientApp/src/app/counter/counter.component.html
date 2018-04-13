@@ -1,0 +1,144 @@
+<!--<p>This is a simple example of an Angular component.</p>
+
+<p>Current count: <strong>{{ currentCount }}</strong></p>
+
+<button (click)="incrementCounter()">Increment</button>-->
+
+
+
+<div class="main-content">
+  <div class="container-fluid">
+
+    <form class="form-horizontal" #partItemForm="ngForm">
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-12"> <h1>Part Item </h1><hr> </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="required">Part Number:</label>
+            <input id="partNumber" name="partNumber" class="form-control" [(ngModel)]="partNumber" #partNo="ngModel" required />
+            <p class="alert-danger" *ngIf="partNo.invalid && partNo.dirty" >Required</p>
+           
+            
+            </div>
+          <div class="col-md-3">
+            <label>Old Part Number:</label>
+            <input id="oldPartNumber" name="oldPartNumber" [(ngModel)]="oldPartNumber" class="form-control" #oldPartNo required />
+            
+          </div>
+          <div class="col-md-3">
+            <label>Manufacture:</label>
+            <select class="form-control">
+              <option [value]="1">One</option>
+              <option [value]="2">Two</option>
+              <option [value]="3">Three</option>
+              <option [value]="4">Four</option>
+              <option [value]="5">Five</option>
+            </select>
+            
+          </div>
+          <div class="col-md-3">
+            <label>Sub Manufacture:</label>
+            <select class="form-control">
+              <option [value]="1">One</option>
+              <option [value]="2">Two</option>
+              <option [value]="3">Three</option>
+              <option [value]="4">Four</option>
+              <option [value]="5">Five</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label>Product Code:</label>
+            <select class="form-control" name="productCode" id="productCode" #productCode required ngModel>
+              <option *ngFor="let product of productCodes" [value]="product.value">
+                {{product.Name}}
+              </option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label>Ship Min/Max To:</label>
+            <select class="form-control">
+              <option [value]="1">One</option>
+              <option [value]="2">Two</option>
+              <option [value]="3">Three</option>
+              <option [value]="4">Four</option>
+              <option [value]="5">Five</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <label for="IsVendor">Xrefs: </label>
+            <input id="isWarrantyRepair" type="checkbox" class="form-check" name="isWarrantyRepair" />
+          </div>
+          <div class="col-md-2"><label for="IsVendor">Description:  </label><input id="isWarrantyRepair" type="checkbox" class="form-check" name="isWarrantyRepair" /></div>
+          <div class="col-md-2"><label for="IsVendor">Specs:  </label><input id="isWarrantyRepair" type="checkbox" class="form-check" name="isWarrantyRepair" /></div>
+          <div class="clear-fix"> </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3"><label>SLAMM Number:</label><input id="PartNumber" type="text" class="form-control" required /></div>
+          <div class="col-md-3"> <label>BIN Location:</label><input id="PartNumber" type="text" class="form-control" required /></div>
+          <div class="col-md-3">
+            <label>Unit of Measure:</label><select class="form-control">
+              <option [value]="1">One</option>
+              <option [value]="2">Two</option>
+              <option [value]="3">Three</option>
+              <option [value]="4">Four</option>
+              <option [value]="5">Five</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="IsVendor">Inventory:</label>
+            <input id="isWarrantyRepair" type="checkbox" class="form-check" name="isWarrantyRepair" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label>Minimum Quantity:</label>
+            <input id="MinQuantity" type="number" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label>Maximum Quantity:</label>
+            <input id="MaxQuantity" type="number" class="form-control" />
+          </div>
+          <div class="col-md-3">
+            <label>Lead Time:</label>
+            <input id="LeadTime" type="number" class="form-control" />
+          </div>
+
+          <div class="col-md-3"><label>Form Status:</label>{{formValid}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <label>Description:</label><textarea id="WorkInstructions" type="text" multiple class="form-control"
+                                                 name="WorkInstructions" maxlength="1024"></textarea>
+          </div>
+        </div>
+
+
+        <div class="row"><br /></div>
+        <div class="row">
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-success" [disabled]="partItemForm.invalid"><i class="fa fa-save"> Save </i> </button>
+            <button type="button" class="btn btn-primary"><i class="fa fa-pencil"> Update </i></button>
+            <button type="button" class="btn btn-secondary"><i class="fa fa-list"> Button </i></button>
+            <button type="button" class="btn btn-info"> <i class="fa fa-info-circle"> Info </i></button>
+            <button type="button" class="btn btn-warning"> <i class="fa fa-exclamation-triangle"> Warning </i></button>
+            <button type="button" class="btn btn-danger"> <i class="fa fa-trash"> Delete </i></button>
+            <button type="button" class="btn btn-link"><i class="fa fa-link"> Link Button </i></button>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+

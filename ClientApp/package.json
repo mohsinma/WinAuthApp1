@@ -29,7 +29,7 @@
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
-    "moment": "^2.20.1",
+    "moment": "^2.29.4",
     "ng2-smart-table": "^1.2.2",
     "ng2-toastr": "^4.1.2",
     "ngx-bootstrap": "^2.0.2",
